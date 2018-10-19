@@ -13,5 +13,6 @@
     title: "book-title #{i}",
     memo: "memo ##{i}",
     author: "author #{i}",
+    user_id: 1
   )
 end

@@ -7,6 +7,11 @@ en:
       update: "%{attr} was successfully updated."
       destroy: "%{attr} was successfully destroyed."
       confirm: "Are you sure?"
+    login:
+      edit: "Edit profile"
+      logout: "Logout"
+      signup: "Sign up"
+      login: "Login"
   activerecord:
     errors:
       messages:

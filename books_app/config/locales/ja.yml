@@ -7,6 +7,11 @@ ja:
       update: "%{attr}が更新されました。"
       destroy: "%{attr}が削除されました。"
       confirm: "削除してよろしいですか？"
+    login:
+      edit: "プロフィールを編集"
+      logout: "ログアウト"
+      signup: "ユーザー登録"
+      login: "ログイン"
   activerecord:
     errors:
       messages:
