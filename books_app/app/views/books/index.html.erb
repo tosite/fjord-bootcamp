@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>No</th>
       <th>Title</th>
       <th>Memo</th>
       <th>Author</th>
@@ -14,8 +15,9 @@
   </thead>
 
   <tbody>
-    <% @books.each do |book| %>
+    <% @books.each_with_index do |book,i| %>
       <tr>
+        <td><%= i+1 %></td>
         <td><%= book.title %></td>
         <td><%= book.memo %></td>
         <td><%= book.author %></td>
@@ -27,6 +29,7 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @books %>
 
 <br>
 
