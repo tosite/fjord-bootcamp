@@ -3,4 +3,6 @@
 class Book < ApplicationRecord
   mount_uploader :picture, PictureUploader
   paginates_per 10
+  validates :title, presence: true
+  validates :author, presence: true
 end
