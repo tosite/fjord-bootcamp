@@ -8,10 +8,10 @@ RSpec.describe Book, type: :model do
   let(:book)   { Book.create(params) }
   let(:params) { { title: "title", author: "author" } }
   describe "record" do
-  it "データが有効な状態であること" do
-    expect(book).to be_valid
+    it "データが有効な状態であること" do
+      expect(book).to be_valid
+    end
   end
-end
   describe "title" do
     it "空白でないこと" do
       params[:title] = nil
@@ -19,12 +19,12 @@ end
     end
   end
   describe "author" do
-  it "空白でないこと" do
-    # book = Book.create(author: nil)
-    params[:author] = nil
-    expect(book.errors[:author].size).to eq 1
+    it "空白でないこと" do
+      # book = Book.create(author: nil)
+      params[:author] = nil
+      expect(book.errors[:author].size).to eq 1
+    end
   end
-end
   # it "" do
   # end
 end

@@ -8,7 +8,6 @@ class BooksController < ApplicationController
   def index
     current_user
     @books = current_user.books.page(params[:page])
-    # @books = Book.page(params[:page])
   end
 
   # GET /books/1
