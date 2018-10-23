@@ -1,6 +1,10 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= frozen_string_literal: true
 
-<h1>Books <%= t('view.hello') %></h1>
+ notice %></p>
+
+<h1>Books <%= frozen_string_literal: true
+
+ t("view.hello") %></h1>
 
 <table>
   <thead>
@@ -15,22 +19,44 @@
   </thead>
 
   <tbody>
-    <% @books.each_with_index do |book,i| %>
+    <%# frozen_string_literal: true
+ @books.each_with_index
+ do |book,i| %>
       <tr>
-        <td><%= i+1 %></td>
-        <td><%= book.title %></td>
-        <td><%= book.memo %></td>
-        <td><%= book.author %></td>
-        <td><%= book.picture %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: t('view.messages.confirm') } %></td>
+        <td><%= frozen_string_literal: true
+
+ i + 1 %></td>
+        <td><%= frozen_string_literal: true
+
+ book.title %></td>
+        <td><%= frozen_string_literal: true
+
+ book.memo %></td>
+        <td><%= frozen_string_literal: true
+
+ book.author %></td>
+        <td><%= frozen_string_literal: true
+
+ book.picture %></td>
+        <td><%= frozen_string_literal: true
+
+ link_to "Show", book %></td>
+        <td><%= frozen_string_literal: true
+
+ link_to "Edit", edit_book_path(book) %></td>
+        <td><%= frozen_string_literal: true
+
+ link_to "Destroy", book, method: :delete, data: { confirm: t("view.messages.confirm") } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= paginate @books %>
+<%= frozen_string_literal: true
 
-<br>
+ paginate @books %>
 
-<%= link_to 'New Book', new_book_path %>
+<br />
+
+<%= frozen_string_literal: true
+
+ link_to "New Book", new_book_path %>

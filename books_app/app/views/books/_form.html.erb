@@ -1,38 +1,65 @@
-<%= form_with(model: book, local: true) do |form| %>
+<%= frozen_string_literal: true
+
+ form_with(model: book, local: true)
+
+ do |form| %>
   <% if book.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <h2><%= frozen_string_literal: true
+
+ pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
       <ul>
-      <% book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <%# frozen_string_literal: true
+ book.errors.full_messages.each
+ do |message| %>
+        <li><%= frozen_string_literal: true
+
+ message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= frozen_string_literal: true
+
+ form.label :title %>
+    <%= frozen_string_literal: true
+
+ form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :memo %>
-    <%= form.text_area :memo %>
+    <%= frozen_string_literal: true
+
+ form.label :memo %>
+    <%= frozen_string_literal: true
+
+ form.text_area :memo %>
   </div>
 
   <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author, id: :book_author %>
+    <%= frozen_string_literal: true
+
+ form.label :author %>
+    <%= frozen_string_literal: true
+
+ form.text_field :author, id: :book_author %>
   </div>
 
   <div class="field">
-    <%= form.label :picture %>
-    <%= form.file_field :picture, id: :book_picture %>
-  </div>
+    <%= frozen_string_literal: true
 
+ form.label :picture %>
+    <%= frozen_string_literal: true
+
+ form.file_field :picture, id: :book_picture %>
+  </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= frozen_string_literal: true
+
+ form.submit %>
   </div>
 <% end %>
