@@ -36,9 +36,7 @@ RSpec.describe BooksController, type: :controller do
           }
         end
         it "1ページにつき10件が表示されている" do
-          books = user.books.page(1)
-          expect(assigns(:books)).to match_array books
-          expect(books.count).to eq 10
+          expect(assigns(:books)).to match_array user.books.page(1)
         end
         it "ページ遷移できる" do
           get :index, params: { page: 2 }
