@@ -6,7 +6,6 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    current_user
     @books = current_user.books.page(params[:page])
   end
 
