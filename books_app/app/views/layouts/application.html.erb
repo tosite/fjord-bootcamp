@@ -2,32 +2,60 @@
 <html>
   <head>
     <title>BooksApp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <%= frozen_string_literal: true
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+ csrf_meta_tags %>
+    <%= frozen_string_literal: true
+
+ csp_meta_tag %>
+
+    <%= frozen_string_literal: true
+
+ stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= frozen_string_literal: true
+
+ javascript_include_tag "application", 'data-turbolinks-track': "reload" %>
   </head>
 
   <body>
 
 <p class="navbar-text pull-right">
   <% if user_signed_in? %>
-    Logged in as <strong><%= current_user.email %></strong>.
-    <%= link_to t('view.login.edit'), edit_user_registration_path, class: 'navbar-link' %> |
-    <%= link_to t('view.login.logout'), destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
+    Logged in as <strong><%= frozen_string_literal: true
+
+ current_user.email %></strong>.
+    <%= frozen_string_literal: true
+
+ link_to t("view.login.edit"), edit_user_registration_path, class: "navbar-link" %> |
+    <%= frozen_string_literal: true
+
+ link_to t("view.login.logout"), destroy_user_session_path, method: :delete, class: "navbar-link" %>
   <% else %>
-    <%= link_to t('view.login.signup'), new_user_registration_path, class: 'navbar-link'  %> |
-    <%= link_to t('view.login.login'), new_user_session_path, class: 'navbar-link'  %>
+    <%= frozen_string_literal: true
+
+ link_to t("view.login.signup"), new_user_registration_path, class: "navbar-link" %> |
+    <%= frozen_string_literal: true
+
+ link_to t("view.login.login"), new_user_session_path, class: "navbar-link" %>
   <% end %>
 </p>
 
-    <%= link_to_if params[:locale].present?, '日本語',  url_for(controller: controller.controller_name, action: controller.action_name, locale: 'ja') %> |
-    <%= link_to_if params[:locale] != 'en',  'English',  url_for(controller: controller.controller_name, action: controller.action_name, locale: 'en') %>
+    <%= frozen_string_literal: true
 
-    <% if notice %><p class="alert alert-success"><%= notice %></p><% end %>
-    <% if alert %><p class="alert alert-danger"><%= alert %></p><% end %>
+ link_to_if params[:locale].present?, "日本語",  url_for(controller: controller.controller_name, action: controller.action_name, locale: "ja") %> |
+    <%= frozen_string_literal: true
 
-    <%= yield %>
+ link_to_if params[:locale] != "en",  "English",  url_for(controller: controller.controller_name, action: controller.action_name, locale: "en") %>
+
+    <% if notice %><p class="alert alert-success"><%= frozen_string_literal: true
+
+ notice %></p><% end %>
+    <% if alert %><p class="alert alert-danger"><%= frozen_string_literal: true
+
+ alert %></p><% end %>
+
+    <%= frozen_string_literal: true
+
+ yield %>
   </body>
 </html>
