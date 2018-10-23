@@ -28,6 +28,23 @@ RSpec.describe BooksController, type: :controller do
       it "本が表示されている" do
         expect(assigns(:books)).to match_array book
       end
+      describe "ページネーション機能" do
+        before do
+          0.upto(50) { |i|
+            p = params.merge!(title: "title #{i + 1}")
+            user.books.create(p)
+          }
+        end
+        it "1ページにつき10件が表示されている" do
+          books = user.books.page(1)
+          expect(assigns(:books)).to match_array books
+          expect(books.count).to eq 10
+        end
+        it "ページ遷移できる" do
+          get :index, params: { page: 2 }
+          expect(assigns(:books)).to match_array user.books.page(2)
+        end
+      end
     end
   end
 
