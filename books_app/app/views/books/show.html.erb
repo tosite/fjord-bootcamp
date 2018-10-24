@@ -1,38 +1,24 @@
-<p id="notice"><%= frozen_string_literal: true
-
- notice %></p>
+<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
-  <%= frozen_string_literal: true
-
- @book.title %>
+  <%= @book.title %>
 </p>
 
 <p>
   <strong>Memo:</strong>
-  <%= frozen_string_literal: true
-
- @book.memo %>
+  <%= @book.memo %>
 </p>
 
 <p>
   <strong>Author:</strong>
-  <%= frozen_string_literal: true
-
- @book.author %>
+  <%= @book.author %>
 </p>
 
 <p>
   <strong>Picture:</strong>
-  <%= frozen_string_literal: true
-
- image_tag(@book.picture_url) if @book.picture.present? %>
+  <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
-<%= frozen_string_literal: true
-
- link_to "Edit", edit_book_path(@book) %> |
-<%= frozen_string_literal: true
-
- link_to "Back", books_path %>
+<%= link_to "Edit", edit_book_path(@book) %> |
+<%= link_to "Back", books_path %>
