@@ -7,3 +7,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+100.times do |i|
+  Book.create(
+    title: "book-title #{i}",
+    memo: "memo ##{i}",
+    author: "author #{i}",
+    user_id: 1
+  )
+end

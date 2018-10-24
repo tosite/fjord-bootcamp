@@ -6,7 +6,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books = current_user.books.page(params[:page])
   end
 
   # GET /books/1
@@ -15,7 +15,7 @@ class BooksController < ApplicationController
 
   # GET /books/new
   def new
-    @book = Book.new
+    @book = current_user.books.new
   end
 
   # GET /books/1/edit
@@ -24,11 +24,11 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    @book = Book.new(book_params)
+    @book = current_user.books.new(book_params)
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: "Book was successfully created." }
+        format.html { redirect_to @book, notice: t("view.messages.create", attr: t("book")) }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BooksController < ApplicationController
   def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_to @book, notice: "Book was successfully updated." }
+        format.html { redirect_to @book, notice: t("view.messages.update", attr: t("book")) }
         format.json { render :show, status: :ok, location: @book }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
     respond_to do |format|
-      format.html { redirect_to books_url, notice: "Book was successfully destroyed." }
+      format.html { redirect_to books_url, notice: t("view.messages.destroy", attr: t("book")) }
       format.json { head :no_content }
     end
   end
@@ -65,7 +65,7 @@ class BooksController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_book
-      @book = Book.find(params[:id])
+      @book = current_user.books.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
